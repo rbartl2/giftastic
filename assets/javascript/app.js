@@ -16,7 +16,14 @@ $(document).ready(function(){
                 var rating = results[i].rating;
                 var p = $('<p>').text("Rating: " + rating);
                 var topicsImg = $('<img>');
+                topicsImg.addClass('gifImg');
                 topicsImg.attr("src", results[i].images.fixed_height.url);
+                topicsImg.attr("data-state", "still");
+                topicsImg.attr("data-still", results[i].images.fixed_height_still.url);
+                topicsImg.attr("data-animate", results[i].images.fixed_height.url);
+                topicsDiv.append(p);
+                topicsDiv.append(topicsImg);
+                $('#shows-view').prepend(topicsDiv);
             }
         })
     }
@@ -34,6 +41,16 @@ $(document).ready(function(){
 
     }
 
+    // function on click takes user choice show from input
+    // pushes to topics array and displays new button
+    $("#submit").on('click', function(event){
+        event.preventDefault();
+        var userShow = $('#userInput').val().trim();
+        topics.push(userShow);
+        $('userInput').val('');
+        renderButtons();
+    })
+
 
     // create function to display tv show data in buttons
     function renderButtons(){
@@ -48,6 +65,11 @@ $(document).ready(function(){
             $('#buttons-tv').append(btn);           // append buttons to initial div
         }
     }
+
+    // gifs with class of tvShow will animate
+    $(document).on('click', '.gifImg', animateGifs);
+    // display gifs on html
+    $(document).on('click', '.tvShow', displayGifs);
 
     renderButtons();
 
