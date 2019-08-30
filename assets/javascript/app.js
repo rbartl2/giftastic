@@ -13,17 +13,17 @@ $(document).ready(function(){
             var results = response.data;
             for (var i = 0; i < results.length; i++){
                 var topicsDiv = $("<div>");
-                var rating = results[i].rating;
-                var p = $('<p>').text("Rating: " + rating);
-                var topicsImg = $('<img>');
-                topicsImg.addClass('gifImg');
-                topicsImg.attr("src", results[i].images.fixed_height.url);
-                topicsImg.attr("data-state", "still");
+                var rating = results[i].rating;                                     // assign rating to variable
+                var p = $('<p>').text("Rating: " + rating);                         // add rating info in html                         
+                var topicsImg = $('<img>');                                         // assign img element to variable
+                topicsImg.addClass('gifImg');                                       // add class to gif images
+                topicsImg.attr("src", results[i].images.fixed_height.url);          // attch url source to gif image
+                topicsImg.attr("data-state", "still");                              // add attribute
                 topicsImg.attr("data-still", results[i].images.fixed_height_still.url);
                 topicsImg.attr("data-animate", results[i].images.fixed_height.url);
-                topicsDiv.append(p);
-                topicsDiv.append(topicsImg);
-                $('#shows-view').prepend(topicsDiv);
+                topicsDiv.append(p);                                                // append rating to topicsDiv
+                topicsDiv.append(topicsImg);                                        // appends the image to topicsDiv
+                $('#shows-view').prepend(topicsDiv);                                // prepend new gifs to shows-view id
             }
         })
     }
@@ -66,25 +66,10 @@ $(document).ready(function(){
         }
     }
 
-    // gifs with class of tvShow will animate
+    // gifs with class of gifImg will animate when click on gif
     $(document).on('click', '.gifImg', animateGifs);
-    // display gifs on html
+    // display gifs on html with click of button
     $(document).on('click', '.tvShow', displayGifs);
 
     renderButtons();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 })
