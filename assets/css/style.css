@@ -1,0 +1,16 @@
+body{
+    background-color: black;
+    color: aliceblue;
+}
+
+button{
+    margin: 3px;
+}
+
+h1{
+    color: darkmagenta;
+}
+
+.gifImg{
+    display: inline-block;
+}
