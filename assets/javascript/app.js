@@ -13,11 +13,12 @@ $(document).ready(function(){
             var results = response.data;
             for (var i = 0; i < results.length; i++){
                 var topicsDiv = $("<div>");
+                topicsDiv.addClass("topicsDiv card m-2 text-center");
                 var rating = results[i].rating;                                     // assign rating to variable
                 var p = $('<p>').text("Rating: " + rating);                         // add rating info in html                         
                 var topicsImg = $('<img>');                                         // assign img element to variable
                 topicsImg.addClass('gifImg');                                       // add class to gif images
-                topicsImg.attr("src", results[i].images.fixed_height.url);          // attch url source to gif image
+                topicsImg.attr("src", results[i].images.fixed_height_still.url);          // attch url source to gif image
                 topicsImg.attr("data-state", "still");                              // add attribute
                 topicsImg.attr("data-still", results[i].images.fixed_height_still.url);
                 topicsImg.attr("data-animate", results[i].images.fixed_height.url);
