@@ -15,6 +15,7 @@ $(document).ready(function(){
                 var topicsDiv = $("<div>");
                 topicsDiv.addClass("topicsDiv card m-2 text-center");
                 var rating = results[i].rating;                                     // assign rating to variable
+                rating = rating.toUpperCase();
                 var p = $('<p>').text("Rating: " + rating);                         // add rating info in html                         
                 var topicsImg = $('<img>');                                         // assign img element to variable
                 topicsImg.addClass('gifImg');                                       // add class to gif images
