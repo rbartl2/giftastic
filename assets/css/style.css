@@ -19,3 +19,7 @@ h1{
 .gifImg{
     cursor: pointer;
 }
+
+h1{
+    margin-top: 20px;
+}
