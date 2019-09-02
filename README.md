@@ -7,3 +7,6 @@ This is a dynamic webpage written with JavaScript using jQuery and AJAX. At the 
 Click an image to animate the gif and add your own favorite tv show to the list.
 
 Have fun!
+
+https://rbartl2.github.io/giftastic/
+
